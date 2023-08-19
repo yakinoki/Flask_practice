@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Mark App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>ランダムなマークを表示するアプリ</h1>
+    <button id="getRandomMark">ランダムなマークを表示</button>
+    <p id="randomMark"></p>
+    <script>
+        $(document).ready(function() {
+            $("#getRandomMark").click(function() {
+                $.get("/random_mark", function(data) {
+                    $("#randomMark").text("ランダムなマーク: " + data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
